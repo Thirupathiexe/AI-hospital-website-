@@ -1,0 +1,10 @@
+netracare.db*
+.env
+__pycache__/
+.pytest_cache/
+node_modules/
+dist/
+
+# empty clone left over from setup
+AI-hospital-website-/
+*.log

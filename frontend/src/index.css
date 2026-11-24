@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  --color-brand-50: #effcfa;
+  --color-brand-100: #c9f5ee;
+  --color-brand-200: #96eadf;
+  --color-brand-300: #5bd6c9;
+  --color-brand-400: #2ebcb0;
+  --color-brand-500: #14a097;
+  --color-brand-600: #0d8079;
+  --color-brand-700: #0f6762;
+  --color-brand-800: #11524f;
+  --color-brand-900: #123f3d;
+  --color-ink: #0b1f2a;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-ring: pulse-ring 1.6s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+html { scroll-behavior: smooth; }
+body { @apply bg-slate-50 text-ink antialiased; }
+
+@utility btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition focus:outline-none focus-visible:ring-4 disabled:cursor-not-allowed disabled:opacity-50; }
+@utility btn-primary { @apply btn bg-brand-600 text-white shadow-lg shadow-brand-600/25 hover:bg-brand-700 focus-visible:ring-brand-200; }
+@utility btn-ghost { @apply btn border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 focus-visible:ring-slate-200; }
+@utility btn-danger { @apply btn bg-rose-50 text-rose-700 hover:bg-rose-100 focus-visible:ring-rose-200; }
+@utility card { @apply rounded-2xl border border-slate-200/80 bg-white shadow-sm; }
+@utility input { @apply w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm outline-none transition placeholder:text-slate-400 focus:border-brand-400 focus:ring-4 focus:ring-brand-100; }
+@utility label { @apply mb-1.5 block text-xs font-semibold uppercase tracking-wide text-slate-500; }
+@utility glass { @apply border border-white/40 bg-white/70 backdrop-blur-xl; }
