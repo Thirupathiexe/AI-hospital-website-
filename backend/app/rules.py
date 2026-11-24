@@ -309,5 +309,6 @@ def free_slots(s: Session, doctor_id: str, date_str: str, visit_type: str, speci
             except RuleError:
                 pass
             t = add_minutes(t, 10)
+    reasons = list(dict.fromkeys(reasons))  # a whole day off gives the same reason for AM and PM
     reason = None if slots else (" ".join(reasons) or "All slots on this day are taken.")
     return {"slots": slots, "reason": reason, "code": None}
